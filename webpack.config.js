@@ -12,7 +12,7 @@ module.exports = {
     /** "entry"
      * the entry point 
      */
-    entry: "./index.js",
+    entry: "./index.tsx",
     output: {
         /** "path"
          * the folder path of the output file 
@@ -21,7 +21,7 @@ module.exports = {
         /** "filename"
          * the name of the output file 
          */
-        filename: "main.js"
+        filename: "bundle.js"
     },
     /** "target"
      * setting "node" as target app (server side), and setting it as "web" is 
@@ -58,7 +58,7 @@ module.exports = {
          * resolve the one with the extension listed first in the array and skip the rest. 
          * This is what enables users to leave off the extension when importing
          */
-        extensions: ['.js', '.jsx', '.json']
+        extensions: ['.tsx', '.ts', '.js', '.jsx', '.json']
     },
     module: {
         /** "rules"
@@ -69,7 +69,7 @@ module.exports = {
          */
         rules: [
             {
-                test: /\.(js|jsx)$/,    //kind of file extension this rule should look for and apply in test
+                test: /\.(js|jsx|ts|tsx)$/,    //kind of file extension this rule should look for and apply in test
                 exclude: /node_modules/, //folder to be excluded
                 use: 'babel-loader' //loader which we are going to use
             }
