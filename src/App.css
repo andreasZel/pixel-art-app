@@ -1,0 +1,19 @@
+.appWrapper {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: 100%;
+    height: 100%;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+.drawMenu {
+    background-color: #FFF1DD;
+}
+
+.drawMenu {
+    height: 98%;
+    width: 97%;
+    margin-right: auto;
+}

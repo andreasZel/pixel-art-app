@@ -1,0 +1,16 @@
+#drawGrid {
+    height: 98%;
+    width: 98%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20px, 1fr)); /* Repeat columns auto-filling based on space */
+    grid-template-rows: repeat(auto-fill, minmax(20px, 1fr));    /* Repeat rows auto-filling based on space */
+    gap: 5px;
+    background-color: #FFF1DD;
+    padding: 5px;
+    overflow: clip;
+}
+
+.gridTile {
+    width: 20px;
+    height: 20px;
+}
