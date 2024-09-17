@@ -1,0 +1,9 @@
+.drawMenu {
+    height: 98%;
+    width: 97%;
+    display: grid;
+    grid-template-rows: 45% 45% 10%;
+    background-color: #FFF1DD;
+    margin-right: auto;
+    justify-items: center;
+}

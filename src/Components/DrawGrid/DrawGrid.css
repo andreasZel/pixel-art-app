@@ -1,11 +1,19 @@
-#drawGrid {
+.drawGridWrapper {
     height: 98%;
     width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF1DD;
+}
+
+#drawGrid {
+    max-width: 900px;
+    max-height: 900px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20px, 1fr)); /* Repeat columns auto-filling based on space */
     grid-template-rows: repeat(auto-fill, minmax(20px, 1fr));    /* Repeat rows auto-filling based on space */
     gap: 5px;
-    background-color: #FFF1DD;
     padding: 5px;
     overflow: clip;
 }
@@ -13,4 +21,11 @@
 .gridTile {
     width: 20px;
     height: 20px;
+    caret-color: transparent;
+}
+
+.gridTile:hover {
+    transition: ease-in 0.1s;
+    transform: scale(1.1);
+    outline: 2px solid red;
 }
