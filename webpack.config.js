@@ -69,6 +69,10 @@ module.exports = {
          */
         rules: [
             {
+                test: /\.(png|jpe?g|gif)$/i,
+                type: 'asset/resource',  // Built-in Webpack 5 asset modules
+            },
+            {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
