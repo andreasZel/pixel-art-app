@@ -1,21 +1,43 @@
 import React, { useEffect, useState } from "react";
 import './DrawGrid.css';
+import { useDrawOptionsContext } from "../DrawOptionsProvider/DrawOptionsProvider";
 
 export const DrawGrid = () => {
 
     const [drawElements, setDrawElements] = useState<drawElement[]>([]);
+    const { DrawContextStateOptions } = useDrawOptionsContext();
 
     useEffect(() => {
         initializeGrid(setDrawElements);
     }, [])
 
-    return (
-        <div id="drawGrid">
-            {
-                drawElements.length > 0 && drawElements?.map((gridTile) => {
-                    return <div key={gridTile?.id} className="gridTile" style={{ backgroundColor: gridTile?.color }}></div>
-                })
+    const alterStyle = (id: number) => {
+        setDrawElements((prev) => {
+            const tempElements = [...prev];
+            const index = tempElements.findIndex((element) => element.id == id);
+
+            if (index != -1) {
+                tempElements[index].color = DrawContextStateOptions.drawColor;
+                return [...tempElements];
             }
+            return prev;
+        })
+    }
+
+    return (
+        <div className="drawGridWrapper">
+            <div id="drawGrid">
+                {
+                    drawElements.length > 0 && drawElements?.map((gridTile) => {
+                        return <div
+                            key={gridTile?.id}
+                            className="gridTile"
+                            style={{ backgroundColor: gridTile?.color }}
+                            onClick={() => { alterStyle(gridTile?.id) }}
+                        ></div>
+                    })
+                }
+            </div>
         </div>
     )
 }
