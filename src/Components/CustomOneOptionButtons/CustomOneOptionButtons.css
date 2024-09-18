@@ -1,24 +1,23 @@
-.twoOptionButton, .multipleOptionButton {
+.multipleOptionButton {
     min-width: 120px;
     min-height: 50px;
     background-color: #47b960;
     cursor: pointer;
 }
 
-.twoOptionButton:hover,
- .multipleOptionButton:hover {
+.multipleOptionButton:hover {
     transition: ease-in 0.2s;
     opacity: 1!important;
 }
 
-.twoOptionButton:first-child {
+.multipleOptionButton:first-child {
     border-radius: 6px 0px 0px 6px;
     border-width: 0px 1px 0px 0px;
     border-color: #43634a;
     border-style: solid;
 }
 
-.twoOptionButton:last-child {
+.multipleOptionButton:last-child {
     border-radius: 0px 6px 6px 0px;
     border-width: 0px 0px 0px 1px;
     border-color: #43634a;

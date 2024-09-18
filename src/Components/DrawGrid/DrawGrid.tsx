@@ -33,7 +33,8 @@ export const DrawGrid = () => {
                             key={gridTile?.id}
                             className="gridTile"
                             style={{ backgroundColor: gridTile?.color }}
-                            onClick={() => { alterStyle(gridTile?.id) }}
+                            onClick={() => { if (DrawContextStateOptions.drawMode == 'click') alterStyle(gridTile?.id) }}
+                            onMouseOver={() => { if (DrawContextStateOptions.drawMode == 'FreeDraw') alterStyle(gridTile?.id) }}
                         ></div>
                     })
                 }

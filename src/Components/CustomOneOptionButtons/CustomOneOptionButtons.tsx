@@ -12,7 +12,7 @@ export const CustomOneOptionButtons = ({ buttons, initialFocus = -1 }: ButtonPro
                     return <button
                         key={index}
                         style={{ opacity: (focusedBtn != index || focusedBtn == null) ? '0.6' : '1' }}
-                        className={buttons?.length == 2 ? 'twoOptionButton' : 'multipleOptionButton'}
+                        className={'multipleOptionButton'}
                         onClick={() => { button.onClickCallBack(); setFocusedBtn(index) }}>
                         {!button?.onlyIcon ? button?.title : <img src={button?.icon?.src} width={button?.icon?.width} />}
                     </button>
