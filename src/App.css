@@ -6,5 +6,18 @@
     width: 100%;
     justify-items: center;
     align-items: center;
+    caret-color: transparent;
 }
 
+.colorInput {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: 0;
+}
+
+.colorInput:hover {
+    opacity: 0.8;
+    transition: ease-in 0.1s;
+    cursor: pointer;
+}
