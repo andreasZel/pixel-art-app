@@ -1,15 +1,35 @@
 import React, { useEffect, useState } from "react";
 import './DrawGrid.css';
 import { useDrawOptionsContext } from "../DrawOptionsProvider/DrawOptionsProvider";
+import { drawElement } from "../../types";
 
 export const DrawGrid = () => {
 
     const [drawElements, setDrawElements] = useState<drawElement[]>([]);
-    const { DrawContextStateOptions } = useDrawOptionsContext();
+    const { DrawContextStateOptions, imageColors } = useDrawOptionsContext();
 
     useEffect(() => {
         initializeGrid(setDrawElements);
     }, [])
+
+    useEffect(() => {
+
+        if (imageColors.length <= 0)
+            return;
+
+        setDrawElements((prev) => {
+            let copyDrawElements = [...prev];
+
+            copyDrawElements = copyDrawElements.map((element, index) => {
+                return {
+                    ...element,
+                    color: imageColors[index]
+                }
+            })
+
+            return [...copyDrawElements];
+        })
+    }, [imageColors])
 
     const alterStyle = (id: number) => {
         setDrawElements((prev) => {
@@ -60,9 +80,4 @@ function initializeGrid(setDrawElements: React.Dispatch<React.SetStateAction<dra
 
         setDrawElements(grid);
     }
-}
-
-type drawElement = {
-    id: number;
-    color: string;
 }

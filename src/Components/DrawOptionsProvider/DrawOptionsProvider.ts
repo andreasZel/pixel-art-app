@@ -6,7 +6,9 @@ export const DrawOptionsContext = createContext<DrawOptionsContextType>({
         drawColor: 'black',
         drawMode: 'click'
     },
-    setDrawContextStateOptions: () => { }
+    setDrawContextStateOptions: () => { },
+    imageColors: [],
+    setImageColors: () => { }
 });
 
 export const useDrawOptionsContext = () => useContext(DrawOptionsContext);
