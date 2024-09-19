@@ -1,0 +1,35 @@
+.imageToDrawingOptionWrapper {
+    margin-top: 20px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fileCustomImageInput::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.fileCustomImageInput::before {
+    content: url(../../Icons/AddImage.png);
+    display: inline-block;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+.fileCustomImageInput {
+    color: transparent;
+    width: 45px;
+}
+
+.fileCustomImageInput:hover::before {
+    border-color: black;
+}
+
+.fileCustomImageInput:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}

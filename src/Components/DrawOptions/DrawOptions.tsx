@@ -4,6 +4,7 @@ import { MenuTitle } from "../MenuTitle/MenuTitle";
 import { useDrawOptionsContext } from "../DrawOptionsProvider/DrawOptionsProvider";
 import { CustomOneOptionButtons } from "../CustomOneOptionButtons/CustomOneOptionButtons";
 import './DrawOptions.css';
+import { ImageToDrawingOption } from "../ImageToDrawingOption/ImageToDrawingOption";
 
 export const DrawOptions = () => {
     const { DrawContextStateOptions, setDrawContextStateOptions } = useDrawOptionsContext();
@@ -42,6 +43,10 @@ export const DrawOptions = () => {
             <div className="drawOptionsInputHorizontal">
                 <label style={{ justifySelf: 'start', display: 'flex', alignItems: 'center', fontSize: '24px', fontFamily: 'Irish Grover', color: 'rgb(168, 101, 0)' }}>Color: </label>
                 <input className="colorInput" style={{ width: '100%' }} type='color' value={DrawContextStateOptions.drawColor} onChange={changeColor} />
+            </div>
+            <div className="drawOptionsInputVertical">
+                <label style={{ justifySelf: 'start', display: 'flex', alignItems: 'center', fontSize: '24px', fontFamily: 'Irish Grover', color: 'rgb(168, 101, 0)' }}>Image to Drawing: </label>
+                <ImageToDrawingOption />
             </div>
             <div className="drawOptionsInputVertical">
                 <label style={{ justifySelf: 'start', display: 'flex', alignItems: 'center', fontSize: '24px', fontFamily: 'Irish Grover', color: 'rgb(168, 101, 0)' }}>Draw Mode: </label>
