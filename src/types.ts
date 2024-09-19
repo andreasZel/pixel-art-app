@@ -7,4 +7,11 @@ export type DrawOptionsContextType = {
         drawColor: string;
         drawMode: string;
     }>>;
+    imageColors: string[];
+    setImageColors: React.Dispatch<React.SetStateAction<string[]>>;
+}
+
+export type drawElement = {
+    id: number;
+    color: string;
 }
