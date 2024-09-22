@@ -4,7 +4,7 @@ import pool from "../../database";
 export default function drawingsRouter() {
     const app = Router();
 
-    app.get("/:incidentID", async (req, res) => {
+    app.get("/all", async (req, res) => {
         try {
             const result = await pool.query('SELECT * FROM drawings');
             console.log(result)
