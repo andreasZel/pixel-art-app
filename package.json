@@ -4,7 +4,7 @@
   "description": "A pixel art drawing app",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"webpack serve --config webpack.config.js\" \"ts-node ./server/server.ts\"",
+    "start": "concurrently \"webpack-dev-server .\" \"ts-node ./server/server.ts\"",
     "build": "Webpack .",
     "test": "test"
   },
@@ -19,6 +19,7 @@
     "@babel/preset-react": "^7.24.7",
     "@babel/preset-typescript": "^7.24.7",
     "@babel/runtime": "^7.25.6",
+    "@types/pg": "^8.11.10",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "babel-loader": "^9.1.3",
