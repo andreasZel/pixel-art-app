@@ -18,6 +18,9 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    background-color: #FFF1DD;
+    padding: 0px 50px;
+    height: 97%;
 }
 
 
