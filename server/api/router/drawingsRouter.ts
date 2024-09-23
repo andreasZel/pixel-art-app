@@ -10,7 +10,7 @@ export default function drawingsRouter() {
             console.log(result)
             res.json(result.rows);
         } catch (e) {
-            console.log(e);
+            console.log("Something went wrong drawingsRouter():\n" + e);
             res.status(500).send("Something went wrong");
         }
     });
