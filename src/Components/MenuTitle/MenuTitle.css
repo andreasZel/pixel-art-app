@@ -5,6 +5,7 @@
     max-height: 80px;
     background-color: white;
     border-radius: 6px;
+    min-width: 270px;
 }
 
 .menuTitleImage {
