@@ -1,0 +1,4 @@
+.styledButton:hover {
+    transition: ease-in 0.2s;
+    opacity: 0.8;
+}
