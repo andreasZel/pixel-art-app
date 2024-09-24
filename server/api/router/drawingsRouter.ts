@@ -1,5 +1,4 @@
 import { json, Router } from "express";
-import pool from "../../database";
 import { getAllDrawings, saveDrawing } from "../db/drawingsDb";
 
 export default function drawingsRouter() {
@@ -22,12 +21,12 @@ export default function drawingsRouter() {
         if (!req?.params?.ownerid)
             res.status(400).send("/all/:ownerid, Ownerid missing");
 
-        const { pixelids, pixelcolors } = req.body
+        const { pixelids, pixelcolors, drawingtitle } = req.body
 
         try {
             const ownerId = Number(req.params.ownerid);
 
-            res.json(saveDrawing(pixelids, pixelcolors, ownerId));
+            res.json(saveDrawing(pixelids, pixelcolors, ownerId, drawingtitle));
         } catch (e) {
             console.log("Something went wrong /saveDrawing/:ownerid => drawingsRouter():\n" + e);
             res.status(500).send("Something went wrong in /saveDrawing/:ownerid => drawingsRouter()");

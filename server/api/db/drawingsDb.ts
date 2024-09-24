@@ -8,10 +8,10 @@ export async function getAllDrawings(ownerid: number) {
     return queryResult?.rows;
 }
 
-export async function saveDrawing(pixelids: number[], pixelcolors: string[], ownerid: number) {
+export async function saveDrawing(pixelids: number[], pixelcolors: string[], ownerid: number, drawingtitle: string) {
 
-    const query = "INSERT INTO drawings (pixelids, pixelcolors, ownerid) VALUES ($1, %2, $3) RETURNING *";
-    const queryResult = await pool.query(query, [pixelids, pixelcolors, ownerid]);
+    const query = "INSERT INTO drawings (pixelids, pixelcolors, ownerid, drawingtitle) VALUES ($1, %2, $3, $3) RETURNING *";
+    const queryResult = await pool.query(query, [pixelids, pixelcolors, ownerid, drawingtitle]);
 
     return queryResult?.rows;
 }

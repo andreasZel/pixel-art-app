@@ -33,6 +33,12 @@ module.exports = {
          * port of dev server
         */
         port: "9500",
+        proxy: [
+            {
+                context: ['/api'],
+                target: 'http://localhost:3000',
+            },
+        ],
         /** "static" 
          * This property tells Webpack what static file it should serve
         */
