@@ -1,5 +1,6 @@
 import { json, Router } from "express";
 import pool from "../../database";
+import { getAllDrawings, saveDrawing } from "../db/drawingsDb";
 
 export default function drawingsRouter() {
     const app = Router();
@@ -9,8 +10,8 @@ export default function drawingsRouter() {
             res.status(400).send("/all/:ownerid, Ownerid missing");
 
         try {
-            const result = await pool.query(`SELECT * FROM drawings WHERE id=${req.params.ownerid}`);
-            res.json(result.rows);
+            const ownerId = Number(req.params.ownerid);
+            res.json(getAllDrawings(ownerId));
         } catch (e) {
             console.log("Something went wrong /all/:ownerid => drawingsRouter():\n" + e);
             res.status(500).send("Something went wrong in /all/:ownerid => drawingsRouter()");
@@ -24,10 +25,9 @@ export default function drawingsRouter() {
         const { pixelids, pixelcolors } = req.body
 
         try {
-            const query = "INSERT INTO drawings (pixelids, pixelcolors, ownerid) VALUES ($1, %2, $3) RETURNING *";
+            const ownerId = Number(req.params.ownerid);
 
-            const queryResult = await pool.query(query, [pixelids, pixelcolors, req.params.ownerid]);
-            res.json(queryResult.rows);
+            res.json(saveDrawing(pixelids, pixelcolors, ownerId));
         } catch (e) {
             console.log("Something went wrong /saveDrawing/:ownerid => drawingsRouter():\n" + e);
             res.status(500).send("Something went wrong in /saveDrawing/:ownerid => drawingsRouter()");
