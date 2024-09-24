@@ -5,11 +5,10 @@ import { drawElement } from "../../types";
 
 export const DrawGrid = () => {
 
-    const [drawElements, setDrawElements] = useState<drawElement[]>([]);
-    const { DrawContextStateOptions, imageColors } = useDrawOptionsContext();
+    const { DrawContextStateOptions, imageColors, pixels, setPixels } = useDrawOptionsContext();
 
     useEffect(() => {
-        initializeGrid(setDrawElements);
+        initializeGrid(setPixels);
     }, [])
 
     useEffect(() => {
@@ -17,7 +16,7 @@ export const DrawGrid = () => {
         if (imageColors.length <= 0)
             return;
 
-        setDrawElements((prev) => {
+        setPixels((prev) => {
             let copyDrawElements = [...prev];
 
             copyDrawElements = copyDrawElements.map((element, index) => {
@@ -32,7 +31,7 @@ export const DrawGrid = () => {
     }, [imageColors])
 
     const alterStyle = (id: number) => {
-        setDrawElements((prev) => {
+        setPixels((prev) => {
             const tempElements = [...prev];
             const index = tempElements.findIndex((element) => element.id == id);
 
@@ -48,7 +47,7 @@ export const DrawGrid = () => {
         <div className="drawGridWrapper">
             <div id="drawGrid">
                 {
-                    drawElements.length > 0 && drawElements?.map((gridTile) => {
+                    pixels.length > 0 && pixels?.map((gridTile) => {
                         return <div
                             key={gridTile?.id}
                             className="gridTile"
@@ -63,7 +62,7 @@ export const DrawGrid = () => {
     )
 }
 
-function initializeGrid(setDrawElements: React.Dispatch<React.SetStateAction<drawElement[]>>) {
+function initializeGrid(setPixels: React.Dispatch<React.SetStateAction<drawElement[]>>) {
     const gridElement = document.getElementById('drawGrid') as HTMLElement;
 
     if (gridElement) {
@@ -78,6 +77,6 @@ function initializeGrid(setDrawElements: React.Dispatch<React.SetStateAction<dra
             grid[i] = { id: i, color: 'white' }
         }
 
-        setDrawElements(grid);
+        setPixels(grid);
     }
 }

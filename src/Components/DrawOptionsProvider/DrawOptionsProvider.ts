@@ -8,7 +8,9 @@ export const DrawOptionsContext = createContext<DrawOptionsContextType>({
     },
     setDrawContextStateOptions: () => { },
     imageColors: [],
-    setImageColors: () => { }
+    setImageColors: () => { },
+    pixels: [],
+    setPixels: () => { }
 });
 
 export const useDrawOptionsContext = () => useContext(DrawOptionsContext);

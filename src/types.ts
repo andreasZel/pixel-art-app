@@ -9,6 +9,8 @@ export type DrawOptionsContextType = {
     }>>;
     imageColors: string[];
     setImageColors: React.Dispatch<React.SetStateAction<string[]>>;
+    pixels: drawElement[];
+    setPixels: React.Dispatch<React.SetStateAction<drawElement[]>>
 }
 
 export type drawElement = {
