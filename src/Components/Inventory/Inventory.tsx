@@ -57,7 +57,7 @@ export const Inventory = () => {
                     {inventoryItems.map((item) => {
                         return <div className="drawingItem">
                             <label style={{ fontSize: '30px' }}>🖼️</label>
-                            <label style={{ fontSize: '25px', marginRight: "10px", inlineSize: '60px' }}>{item?.drawingtitle}</label>
+                            <label style={{ fontSize: '25px', marginRight: "10px", inlineSize: '120px' }}>{item?.drawingtitle}</label>
                         </div>
                     })}
                 </div>
