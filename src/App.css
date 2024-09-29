@@ -49,6 +49,28 @@
     animation: pulse 1s linear;  
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white; 
+    border-radius: 6px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(168, 101, 0);
+    border-radius: 6px; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(150, 90, 0); 
+  }
+
 @keyframes pulse {
     0% {
     transform: scale(1, 1);

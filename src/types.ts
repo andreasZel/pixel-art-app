@@ -17,3 +17,12 @@ export type drawElement = {
     id: number;
     color: string;
 }
+
+export type inentoryItems = inventoryItem[];
+
+type inventoryItem = {
+    id: number;
+    pixelids: number[];
+    pixelcolors: string[];
+    drawingtitle: string;
+}
