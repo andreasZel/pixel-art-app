@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ConvertIcon, PixelDrawingIcon } from "../../Icons";
 import { getPixelColors } from "../../Utils/GeneralUtils";
 import './ImageToDrawingOption.css';
@@ -7,6 +7,7 @@ import { DrawOptionsContext } from "../DrawOptionsProvider/DrawOptionsProvider";
 export const ImageToDrawingOption = () => {
 
     const { setImageColors } = useContext(DrawOptionsContext);
+    const [classAnimation, setclassAnimation] = useState('');
 
     const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e?.target?.files ? e?.target?.files[0] : null;
@@ -37,7 +38,13 @@ export const ImageToDrawingOption = () => {
 
     return (
         <div className="imageToDrawingOptionWrapper">
-            <input className="fileCustomImageInput" type="file" onChange={handleImageUpload} />
+            <input className={`fileCustomImageInput ${classAnimation}`} type="file"
+                onMouseOver={() => { setclassAnimation("pulseAnimation") }}
+                onDragOverCapture={() => { setclassAnimation("pulseAnimation") }}
+                onDragLeaveCapture={() => { setclassAnimation("") }}
+                onDrop={() => { setclassAnimation("") }}
+                onMouseLeave={() => { setclassAnimation("") }}
+                onChange={handleImageUpload} />
             <canvas id="canvas" width="36" height="36" style={{ display: "none" }}></canvas>
             <img src={ConvertIcon} />
             <img src={PixelDrawingIcon} width={45} />

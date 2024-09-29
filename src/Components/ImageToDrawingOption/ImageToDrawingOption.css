@@ -3,7 +3,7 @@
     display: flex;
     align-items:center;
     justify-content: space-between;
-    width: 100%;
+    width: 70%;
 }
 
 .fileCustomImageInput::-webkit-file-upload-button {
