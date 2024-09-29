@@ -3,6 +3,7 @@ import { useState } from "react"
 import { StyledButton } from "../StyledButton/StyledButton"
 import { inentoryItems } from "../../types"
 import "./Inventory.css";
+import { useDrawOptionsContext } from "../DrawOptionsProvider/DrawOptionsProvider";
 
 export const Inventory = () => {
 
@@ -21,6 +22,8 @@ export const Inventory = () => {
     })
     const [inventoryItems, setInventoryItems] = useState<inentoryItems | null>(null);
 
+    const { setImageColors } = useDrawOptionsContext();
+
     useEffect(() => {
         {
             (async () => {
@@ -30,7 +33,6 @@ export const Inventory = () => {
                         return res?.json();
                     })
                     .then((jsonRes) => {
-                        console.log(jsonRes)
                         if (jsonRes) {
                             setInventoryItems(jsonRes);
                         }
@@ -55,9 +57,9 @@ export const Inventory = () => {
             {buttonState.showInventory && inventoryItems &&
                 <div className="drawingItemList">
                     {inventoryItems.map((item) => {
-                        return <div className="drawingItem">
+                        return <div key={item.id} className="drawingItem" onClick={() => { setImageColors(item.pixelcolors) }}>
                             <label style={{ fontSize: '30px' }}>🖼️</label>
-                            <label style={{ fontSize: '25px', marginRight: "10px", inlineSize: '120px' }}>{item?.drawingtitle}</label>
+                            <label style={{ fontSize: '25px', marginRight: "10px" }}>{item?.drawingtitle}</label>
                         </div>
                     })}
                 </div>
