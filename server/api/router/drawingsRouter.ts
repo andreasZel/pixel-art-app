@@ -22,7 +22,7 @@ export default function drawingsRouter() {
             res.status(400).send("/all/:ownerid, Ownerid missing");
 
         const { pixelids, pixelcolors, drawingtitle } = req.body
-        console.log('in router')
+
         try {
             const ownerId = Number(req.params.ownerid);
 

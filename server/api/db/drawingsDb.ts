@@ -9,7 +9,7 @@ export async function getAllDrawings(ownerid: number) {
 }
 
 export async function saveDrawing(pixelids: number[], pixelcolors: string[], ownerid: number, drawingtitle: string) {
-    console.log('in server', ownerid)
+
     const query = "INSERT INTO drawings (pixelids, pixelcolors, ownerid, drawingtitle) VALUES ($1, $2, $3, $4) RETURNING *";
     const queryResult = await pool.query(query, [pixelids, pixelcolors, ownerid, drawingtitle]);
 
