@@ -7,8 +7,8 @@ import "./Inventory.css";
 export const Inventory = () => {
 
     const [buttonState, setButtonState] = useState({
-        label: 'Show',
-        showInventory: false,
+        label: 'Hide',
+        showInventory: true,
         callBack: () => {
             setButtonState((prevState) => {
                 return {
