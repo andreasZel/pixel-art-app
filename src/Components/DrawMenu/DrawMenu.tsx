@@ -27,6 +27,8 @@ export const DrawMenu = () => {
 
     const saveDrawing = async (ownerId: number) => {
 
+        closeDialog();
+
         try {
             const result = await fetch(`api/drawings/saveDrawing/${ownerId}`, {
                 method: 'POST',
@@ -38,6 +40,8 @@ export const DrawMenu = () => {
                     pixelcolors: pixels.map((pixel) => pixel.color),
                     drawingtitle: inputRef.current?.value ?? 'drawing'
                 })
+            }).catch((e) => {
+                console.warn(e)
             })
 
             console.log(result)
