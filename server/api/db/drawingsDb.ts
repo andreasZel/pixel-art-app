@@ -2,7 +2,15 @@ import pool from "../../database";
 
 export async function getAllDrawings(ownerid: number) {
 
-    const query = "SELECT * FROM drawings WHERE id=$1";
+    const query = "SELECT * FROM drawings WHERE ownerid=$1";
+    const queryResult = await pool.query(query, [Number(ownerid)]);
+
+    return queryResult?.rows;
+}
+
+export async function getAllDrawingsPartial(ownerid: number) {
+
+    const query = "SELECT drawingtitle, pixelcolors, id FROM drawings WHERE ownerid=$1";
     const queryResult = await pool.query(query, [Number(ownerid)]);
 
     return queryResult?.rows;
