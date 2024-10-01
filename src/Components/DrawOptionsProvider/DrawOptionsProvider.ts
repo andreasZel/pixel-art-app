@@ -10,7 +10,11 @@ export const DrawOptionsContext = createContext<DrawOptionsContextType>({
     imageColors: [],
     setImageColors: () => { },
     pixels: [],
-    setPixels: () => { }
+    setPixels: () => { },
+    selectedDrawingId: null,
+    setSelectedDrawingId: () => null,
+    inventoryItems: [],
+    setInventoryItems: () => { }
 });
 
 export const useDrawOptionsContext = () => useContext(DrawOptionsContext);
