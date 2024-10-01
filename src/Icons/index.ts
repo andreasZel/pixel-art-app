@@ -5,3 +5,4 @@ export const FreeDrawIcon: string = require('./FreeDraw.png');
 export const ConvertIcon: string = require('./Convert.png');
 export const AddImageIcon: string = require('./AddImage.png');
 export const PixelDrawingIcon: string = require('./PixelDrawing.png');
+export const DeleteRecycleBin: string = require('./delete.png');

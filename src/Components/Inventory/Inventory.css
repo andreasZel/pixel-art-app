@@ -23,12 +23,14 @@
 
 .drawingItem {
     background-color: white;
+    color: rgb(168, 101, 0);
     padding: 5px;
     border-radius: 6px;
     display: flex;
     width: 100%;
     align-items: center;
     gap: 20px;
+    font-family: "Irish Grover";
 }
 
 .drawingItem, .drawingItem label {
@@ -37,5 +39,6 @@
 
 .drawingItem:hover {
     transition: 0.1s linear;
-    border: 2px solid rgb(168, 101, 0);
+    background-color: rgb(102, 227, 130);
+    color: white
 }
