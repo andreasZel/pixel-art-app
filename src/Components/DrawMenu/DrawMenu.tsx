@@ -7,7 +7,7 @@ import { useDrawOptionsContext } from "../DrawOptionsProvider/DrawOptionsProvide
 
 export const DrawMenu = () => {
 
-    const { pixels } = useDrawOptionsContext();
+    const { pixels, setInventoryItems, selectedDrawingId } = useDrawOptionsContext();
     const dialogRef = useRef<HTMLDialogElement | null>(null);
     const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -38,13 +38,16 @@ export const DrawMenu = () => {
                 body: JSON.stringify({
                     pixelids: pixels.map((pixel) => pixel.id),
                     pixelcolors: pixels.map((pixel) => pixel.color),
-                    drawingtitle: inputRef.current?.value ?? 'drawing'
+                    drawingtitle: inputRef.current?.value ?? 'drawing',
+                    drawingId: selectedDrawingId
                 })
             }).catch((e) => {
                 console.warn(e)
-            })
+            }) as Response;
 
-            console.log(result)
+            const resultJson = await result.json();
+
+            setInventoryItems(resultJson)
         } catch (e) {
             console.log("Error saving drawing: ", e)
         }
@@ -61,8 +64,8 @@ export const DrawMenu = () => {
                 </div>
             </div>
             <dialog className="genericDialog" ref={dialogRef}>
-                <h2>Give your Drawing a Title</h2>
-                <input ref={inputRef} type="text" style={{ border: 'none', width: '50%', height: '35px', fontSize: '25px' }} />
+                {<h2>{selectedDrawingId ? "Update Drawing" : "Give your Drawing a Title"}</h2>}
+                {!selectedDrawingId && <input ref={inputRef} type="text" style={{ border: 'none', width: '50%', height: '35px', fontSize: '25px' }} />}
                 <div className="genericDialogFooter">
                     <StyledButton title={'Cancel'} style={{ width: '120px', height: "30px", backgroundColor: '#da3838' }} onClickCallBack={closeDialog} />
                     <StyledButton title={'Save'} style={{ width: '120px', height: "30px", backgroundColor: '#66E382', }} onClickCallBack={() => { saveDrawing(1) }} />
