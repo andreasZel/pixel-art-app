@@ -39,11 +39,11 @@ export default function drawingsRouter() {
         if (!req?.params?.ownerid)
             res.status(400).send("/all/:ownerid, Ownerid missing");
 
-        const { pixelids, pixelcolors, drawingtitle } = req.body
+        const { pixelids, pixelcolors, drawingtitle, drawingId } = req.body
 
         try {
             const ownerId = Number(req.params.ownerid);
-            const resp = await saveDrawing(pixelids, pixelcolors, ownerId, drawingtitle);
+            const resp = await saveDrawing(pixelids, pixelcolors, ownerId, drawingtitle, drawingId);
 
             res.json(resp);
         } catch (e) {
