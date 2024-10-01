@@ -10,7 +10,11 @@ export type DrawOptionsContextType = {
     imageColors: string[];
     setImageColors: React.Dispatch<React.SetStateAction<string[]>>;
     pixels: drawElement[];
-    setPixels: React.Dispatch<React.SetStateAction<drawElement[]>>
+    setPixels: React.Dispatch<React.SetStateAction<drawElement[]>>;
+    selectedDrawingId: number | null;
+    setSelectedDrawingId: React.Dispatch<React.SetStateAction<number | null>>;
+    inventoryItems: inentoryItems | null;
+    setInventoryItems: React.Dispatch<React.SetStateAction<inentoryItems | null>>;
 }
 
 export type drawElement = {
