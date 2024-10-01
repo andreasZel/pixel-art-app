@@ -1,5 +1,5 @@
 import { json, Router } from "express";
-import { getAllDrawings, getAllDrawingsPartial, saveDrawing } from "../db/drawingsDb";
+import { deleteDrawing, getAllDrawings, getAllDrawingsPartial, saveDrawing } from "../db/drawingsDb";
 
 export default function drawingsRouter() {
     const app = Router();
@@ -49,6 +49,21 @@ export default function drawingsRouter() {
         } catch (e) {
             console.log("Something went wrong /saveDrawing/:ownerid => drawingsRouter():\n" + e);
             res.status(500).send("Something went wrong in /saveDrawing/:ownerid => drawingsRouter()");
+        }
+    });
+
+    app.post("/deleteDrawing/:id", json(), async (req, res) => {
+        if (!req?.params?.id)
+            res.status(400).send("/all/:id, id missing");
+
+        try {
+            const Id = Number(req.params.id);
+            const resp = await deleteDrawing(Id);
+
+            res.json(resp);
+        } catch (e) {
+            console.log("Something went wrong deleteDrawing/:id => drawingsRouter():\n" + e);
+            res.status(500).send("Something went wrong in deleteDrawing/:id => drawingsRouter()");
         }
     });
 

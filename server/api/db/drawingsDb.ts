@@ -23,3 +23,11 @@ export async function saveDrawing(pixelids: number[], pixelcolors: string[], own
 
     return queryResult?.rows;
 }
+
+export async function deleteDrawing(id: number) {
+
+    const query = "DELETE FROM drawings WHERE id=$1 RETURNING *";
+    const queryResult = await pool.query(query, [id]);
+
+    return queryResult?.rows;
+}
