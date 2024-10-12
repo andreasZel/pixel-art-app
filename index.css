@@ -1,6 +1,17 @@
 *, *:before, *:after {
     box-sizing: inherit;
 }
+.light-theme {
+    --background-color: #FFF1DD;
+    --background-color-secondary: white;
+    --color-label-text: rgb(168, 101, 0); 
+}
+
+.dark-theme {
+    --background-color: #000435;
+    --background-color-secondary: #212557;
+    --color-label-text: white; 
+}
 
 html {
     box-sizing: border-box;

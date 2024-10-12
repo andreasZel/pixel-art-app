@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import './DrawGrid.css';
 import { useDrawOptionsContext } from "../DrawOptionsProvider/DrawOptionsProvider";
 import { drawElement } from "../../types";
@@ -74,7 +74,7 @@ function initializeGrid(setPixels: React.Dispatch<React.SetStateAction<drawEleme
         let grid: drawElement[] = [];
 
         for (let i = 0; i < numberOfTiles; i++) {
-            grid[i] = { id: i, color: 'white' }
+            grid[i] = { id: i, color: 'var(--background-color-secondary)' }
         }
 
         setPixels(grid);

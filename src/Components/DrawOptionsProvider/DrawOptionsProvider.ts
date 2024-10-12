@@ -14,7 +14,9 @@ export const DrawOptionsContext = createContext<DrawOptionsContextType>({
     selectedDrawingId: null,
     setSelectedDrawingId: () => null,
     inventoryItems: [],
-    setInventoryItems: () => { }
+    setInventoryItems: () => { },
+    theme: 'light',
+    setTheme: () => { }
 });
 
 export const useDrawOptionsContext = () => useContext(DrawOptionsContext);

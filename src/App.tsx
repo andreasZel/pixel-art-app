@@ -12,20 +12,17 @@ const App = () => {
     const [pixels, setPixels] = useState<drawElement[]>([]);
     const [selectedDrawingId, setSelectedDrawingId] = useState<number | null>(null);
     const [inventoryItems, setInventoryItems] = useState<inentoryItems | null>(null);
+    const [theme, setTheme] = useState<"light" | "dark">("light");
 
     return (
-        <div className="appWrapper">
+        <div className={`appWrapper ${theme != 'dark' ? 'light-theme' : 'dark-theme'}`}>
             <DrawOptionsContext.Provider value={{
-                DrawContextStateOptions,
-                setDrawContextStateOptions,
-                imageColors,
-                setImageColors,
-                pixels,
-                setPixels,
-                selectedDrawingId,
-                setSelectedDrawingId,
-                inventoryItems,
-                setInventoryItems
+                DrawContextStateOptions, setDrawContextStateOptions,
+                imageColors, setImageColors,
+                pixels, setPixels,
+                selectedDrawingId, setSelectedDrawingId,
+                inventoryItems, setInventoryItems,
+                theme, setTheme
             }}>
                 <DrawGrid />
                 <DrawMenu />

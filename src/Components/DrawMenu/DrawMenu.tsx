@@ -59,7 +59,7 @@ export const DrawMenu = () => {
             <div className="drawMenu">
                 <DrawOptions />
                 <ShopOptions />
-                <div style={{ width: '100%', height: '100%', backgroundColor: '#FFF1DD' }}>
+                <div style={{ width: '100%', height: '100%', backgroundColor: 'var(--background-color)' }}>
                     <StyledButton title={'Save Drawing'} style={{ width: '100%', height: '100%', fontSize: '45px', backgroundColor: '#66E382', }} onClickCallBack={openDialog} />
                 </div>
             </div>

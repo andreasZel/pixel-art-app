@@ -22,7 +22,7 @@
 }
 
 .drawingItem {
-    background-color: white;
+    background-color: var(--background-color-secondary);
     color: rgb(168, 101, 0);
     padding: 5px;
     border-radius: 6px;

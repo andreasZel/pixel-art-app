@@ -6,3 +6,5 @@ export const ConvertIcon: string = require('./Convert.png');
 export const AddImageIcon: string = require('./AddImage.png');
 export const PixelDrawingIcon: string = require('./PixelDrawing.png');
 export const DeleteRecycleBin: string = require('./delete.png');
+export const ligthTheme: string = require('./sun.png');
+export const darkTheme: string = require('./moon.png');

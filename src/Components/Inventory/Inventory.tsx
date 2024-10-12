@@ -91,7 +91,7 @@ export const Inventory = () => {
         <>
             <div className="inventoryWrapper">
                 <div className="drawOptionsInputHorizontal">
-                    <label style={{ justifySelf: 'start', display: 'flex', alignItems: 'center', fontSize: '24px', fontFamily: 'Irish Grover', color: 'rgb(168, 101, 0)' }}>
+                    <label style={{ justifySelf: 'start', display: 'flex', alignItems: 'center', fontSize: '24px', fontFamily: 'Irish Grover', color: 'var(--color-label-text)' }}>
                         Inventory:
                     </label>
                     <StyledButton
@@ -107,7 +107,7 @@ export const Inventory = () => {
                                 style={{ backgroundColor: selectedDrawingId == item.id ? 'rgb(102, 227, 130)' : '' }}
                                 onClick={() => { setImageColors(item.pixelcolors); setSelectedDrawingId((prev) => { return prev == item.id ? null : item.id }) }}>
                                 <label style={{ fontSize: '30px' }}>🖼️</label>
-                                <label style={{ fontSize: '25px', marginRight: "10px", color: selectedDrawingId == item.id ? 'white' : '' }}>{item?.drawingtitle}</label>
+                                <label style={{ fontSize: '25px', marginRight: "10px", color: selectedDrawingId == item.id ? 'white' : 'var(--color-label-text)' }}>{item?.drawingtitle}</label>
                                 <img height={24}
                                     title="Delete Drawing"
                                     src={DeleteRecycleBin}

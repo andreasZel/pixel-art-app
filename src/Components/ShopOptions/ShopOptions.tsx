@@ -13,7 +13,7 @@ export const ShopOptions = () => {
                 title={"Shop"}
                 imgSize={58}
                 conteinerCSS={{ marginTop: '10px', padding: '10px 0px' }}
-                labelCSS={{ fontSize: '45px', marginRight: '30px', color: '#A86500', fontFamily: 'Irish Grover' }} />
+                labelCSS={{ fontSize: '45px', marginRight: '30px', color: 'var(--color-label-text)', fontFamily: 'Irish Grover' }} />
 
             <Inventory />
         </div>

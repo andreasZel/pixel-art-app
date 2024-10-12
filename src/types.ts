@@ -15,6 +15,8 @@ export type DrawOptionsContextType = {
     setSelectedDrawingId: React.Dispatch<React.SetStateAction<number | null>>;
     inventoryItems: inentoryItems | null;
     setInventoryItems: React.Dispatch<React.SetStateAction<inentoryItems | null>>;
+    theme: 'light' | 'dark';
+    setTheme: React.Dispatch<React.SetStateAction<"light" | "dark">>
 }
 
 export type drawElement = {

@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     max-height: 80px;
-    background-color: white;
+    background-color: var(--background-color-secondary);
     border-radius: 6px;
     min-width: 270px;
 }
