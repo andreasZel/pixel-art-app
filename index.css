@@ -4,13 +4,17 @@
 .light-theme {
     --background-color: #FFF1DD;
     --background-color-secondary: white;
-    --color-label-text: rgb(168, 101, 0); 
+    --color-label-text: rgb(168, 101, 0);
+    --generic-button-color: #47b960;
+    --generic-button-border-color: #43634a;
 }
 
 .dark-theme {
     --background-color: #000435;
     --background-color-secondary: #212557;
     --color-label-text: white; 
+    --generic-button-color: #31c5ff;
+    --generic-button-border-color: #0b455c;
 }
 
 html {

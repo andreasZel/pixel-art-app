@@ -60,7 +60,7 @@ export const DrawMenu = () => {
                 <DrawOptions />
                 <ShopOptions />
                 <div style={{ width: '100%', height: '100%', backgroundColor: 'var(--background-color)' }}>
-                    <StyledButton title={'Save Drawing'} style={{ width: '100%', height: '100%', fontSize: '45px', backgroundColor: '#66E382', }} onClickCallBack={openDialog} />
+                    <StyledButton title={'Save Drawing'} style={{ width: '100%', height: '100%', fontSize: '45px', backgroundColor: 'var(--generic-button-color)', }} onClickCallBack={openDialog} />
                 </div>
             </div>
             <dialog className="genericDialog" ref={dialogRef}>
@@ -68,7 +68,7 @@ export const DrawMenu = () => {
                 {!selectedDrawingId && <input ref={inputRef} type="text" style={{ border: 'none', width: '50%', height: '35px', fontSize: '25px' }} />}
                 <div className="genericDialogFooter">
                     <StyledButton title={'Cancel'} style={{ width: '120px', height: "30px", backgroundColor: '#da3838' }} onClickCallBack={closeDialog} />
-                    <StyledButton title={'Save'} style={{ width: '120px', height: "30px", backgroundColor: '#66E382', }} onClickCallBack={() => { saveDrawing(1) }} />
+                    <StyledButton title={'Save'} style={{ width: '120px', height: "30px", backgroundColor: 'var(--generic-button-color)', }} onClickCallBack={() => { saveDrawing(1) }} />
                 </div>
             </dialog>
         </>

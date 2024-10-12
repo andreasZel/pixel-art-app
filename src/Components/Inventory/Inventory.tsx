@@ -25,7 +25,7 @@ export const Inventory = () => {
     const dialogRef = useRef<HTMLDialogElement | null>(null);
     const toBeDeletedDrawingId = useRef<number | null>(null);
 
-    const { setImageColors, selectedDrawingId, setSelectedDrawingId, inventoryItems, setInventoryItems } = useDrawOptionsContext();
+    const { setImageColors, selectedDrawingId, setSelectedDrawingId, inventoryItems, setInventoryItems, theme } = useDrawOptionsContext();
 
     const openDialog = (drawingId: number) => {
         toBeDeletedDrawingId.current = drawingId;
@@ -96,7 +96,7 @@ export const Inventory = () => {
                     </label>
                     <StyledButton
                         title={buttonState.label}
-                        style={{ width: '50px', marginLeft: 'auto', height: "30px", backgroundColor: '#66E382' }}
+                        style={{ width: '50px', marginLeft: 'auto', height: "30px", backgroundColor: 'var(--generic-button-color)' }}
                         onClickCallBack={buttonState.callBack} />
                 </div>
                 {buttonState.showInventory && inventoryItems &&
@@ -104,7 +104,7 @@ export const Inventory = () => {
                         {inventoryItems.map((item) => {
                             return <div key={item.id}
                                 className="drawingItem"
-                                style={{ backgroundColor: selectedDrawingId == item.id ? 'rgb(102, 227, 130)' : '' }}
+                                style={{ backgroundColor: selectedDrawingId == item.id ? 'var(--generic-button-color)' : '' }}
                                 onClick={() => { setImageColors(item.pixelcolors); setSelectedDrawingId((prev) => { return prev == item.id ? null : item.id }) }}>
                                 <label style={{ fontSize: '30px' }}>🖼️</label>
                                 <label style={{ fontSize: '25px', marginRight: "10px", color: selectedDrawingId == item.id ? 'white' : 'var(--color-label-text)' }}>{item?.drawingtitle}</label>
@@ -113,7 +113,7 @@ export const Inventory = () => {
                                     src={DeleteRecycleBin}
                                     style={{
                                         marginLeft: 'auto',
-                                        filter: selectedDrawingId == item.id ? 'brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(465%) hue-rotate(180deg) brightness(117%) contrast(100%)' : 'brightness(0) saturate(100%) invert(33%) sepia(95%) saturate(1137%) hue-rotate(21deg) brightness(94%) contrast(102%)'
+                                        filter: (selectedDrawingId == item.id || theme == "dark") ? 'brightness(0) saturate(100%) invert(98%) sepia(4%) saturate(465%) hue-rotate(180deg) brightness(117%) contrast(100%)' : 'brightness(0) saturate(100%) invert(33%) sepia(95%) saturate(1137%) hue-rotate(21deg) brightness(94%) contrast(102%)'
                                     }}
                                     onClick={() => { openDialog(item.id) }}
                                 />
@@ -126,7 +126,7 @@ export const Inventory = () => {
                 <h2>Are you sure you want to delete the drawing ?</h2>
                 <div className="genericDialogFooter">
                     <StyledButton title={'Cancel'} style={{ width: '120px', height: "30px", backgroundColor: '#da3838' }} onClickCallBack={closeDialog} />
-                    <StyledButton title={'Delete'} style={{ width: '120px', height: "30px", backgroundColor: '#66E382', }} onClickCallBack={deleteDrawing} />
+                    <StyledButton title={'Delete'} style={{ width: '120px', height: "30px", backgroundColor: 'var(--generic-button-color)', }} onClickCallBack={deleteDrawing} />
                 </div>
             </dialog>
         </>

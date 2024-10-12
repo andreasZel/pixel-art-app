@@ -36,7 +36,7 @@
 }
 
 .genericDialog[open] h2 {
-    color: rgb(168, 101, 0);
+    color: var(--color-label-text);
     font-family: "Irish Grover";
 }
 

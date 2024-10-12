@@ -12,7 +12,7 @@ const App = () => {
     const [pixels, setPixels] = useState<drawElement[]>([]);
     const [selectedDrawingId, setSelectedDrawingId] = useState<number | null>(null);
     const [inventoryItems, setInventoryItems] = useState<inentoryItems | null>(null);
-    const [theme, setTheme] = useState<"light" | "dark">("light");
+    const [theme, setTheme] = useState<"light" | "dark">(localStorage.getItem('theme') as ('light' | 'dark') || 'light');
 
     return (
         <div className={`appWrapper ${theme != 'dark' ? 'light-theme' : 'dark-theme'}`}>

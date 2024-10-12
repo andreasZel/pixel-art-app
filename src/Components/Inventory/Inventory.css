@@ -39,6 +39,6 @@
 
 .drawingItem:hover {
     transition: 0.1s linear;
-    background-color: rgb(102, 227, 130);
+    background-color: var(--generic-button-color);
     color: white
 }

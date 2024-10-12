@@ -56,6 +56,7 @@ export const DrawOptions = () => {
                 src={theme == 'light' ? ligthTheme : darkTheme}
                 onClick={() => {
                     setTheme((prev) => {
+                        localStorage.setItem('theme', prev == "dark" ? 'light' : 'dark');
                         return prev == "dark" ? 'light' : 'dark';
                     })
                 }}

@@ -1,7 +1,7 @@
 .multipleOptionButton {
     min-width: 120px;
     min-height: 50px;
-    background-color: #47b960;
+    background-color: var(--generic-button-color);
     cursor: pointer;
 }
 
@@ -13,14 +13,14 @@
 .multipleOptionButton:first-child {
     border-radius: 6px 0px 0px 6px;
     border-width: 0px 1px 0px 0px;
-    border-color: #43634a;
+    border-color: var(--generic-button-border-color);
     border-style: solid;
 }
 
 .multipleOptionButton:last-child {
     border-radius: 0px 6px 6px 0px;
     border-width: 0px 0px 0px 1px;
-    border-color: #43634a;
+    border-color: var(--generic-button-border-color);
     border-style: solid;
 }
 
