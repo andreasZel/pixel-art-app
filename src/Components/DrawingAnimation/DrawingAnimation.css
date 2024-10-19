@@ -1,0 +1,61 @@
+#Drawing rect {
+    animation-delay: 0s;
+    animation: shrink 0.2s 2s linear forwards;
+}
+
+#Drawing {
+    transform-origin: center;
+    animation-delay: 10s;
+    animation: shrinkAndRotate 2s 7s ease-in-out forwards, flyOffScreen 0.4s 9.2s forwards;
+}
+
+#Rectangle_79 {
+    transform: translate(40px, 40px);
+    animation: createCrease 0.4s 8s ease-in-out forwards;
+}
+
+@keyframes flyOffScreen {
+    form {  } 
+    to {
+        transform: translate(90px, -120px);
+    }
+}
+
+@keyframes createCrease {
+    from {}
+    to {
+        transform: translate(0);
+    }
+}
+
+@keyframes shrink {
+    0% {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    50% {
+        clip-path: inset(2% 2% 2% 2%);
+    }
+    100% {
+        clip-path: inset(5% 5% 5% 5%);
+    }
+}
+
+@keyframes shrinkAndRotate {
+    0% {
+        transform: scale(1) rotate(0deg) translateY(0);
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 0 100%, 0% 50%);
+    }
+    50% {
+        transform: translateY(-20px); /* Move up */
+        clip-path: polygon(0 41%, 100% 0, 68% 100%, 67% 100%, 21% 95%, 0% 50%);
+    }
+    70% {
+        transform: translateY(20px); /* Move up */
+        clip-path: polygon(0 41%, 100% 0, 68% 100%, 49% 92%, 28% 91%, 31% 78%);
+    }
+    100% {
+        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        transform: scale(0.3) rotate(10deg) translateY(0);
+        clip-path: polygon(0 34%, 100% 1%, 68% 100%, 47% 82%, 37% 89%, 33% 71%);
+    }
+}

@@ -38,7 +38,7 @@ module.exports = {
                 context: ['/api'],
                 target: 'http://localhost:3000',
                 changeOrigin: true,
-                pathRewrite: { '^/api': '' }, 
+                pathRewrite: { '^/api': '' },
             },
         ],
         /** "static" 
@@ -88,7 +88,7 @@ module.exports = {
                 test: /\.(js|jsx|ts|tsx)$/,    //kind of file extension this rule should look for and apply in test
                 exclude: /node_modules/, //folder to be excluded
                 use: 'babel-loader' //loader which we are going to use
-            }
+            },
         ]
     }
 }
