@@ -7,6 +7,7 @@
     --color-label-text: rgb(168, 101, 0);
     --generic-button-color: #47b960;
     --generic-button-border-color: #43634a;
+    --t: 5s
 }
 
 .dark-theme {
@@ -15,6 +16,7 @@
     --color-label-text: white; 
     --generic-button-color: #31c5ff;
     --generic-button-border-color: #0b455c;
+    --t: 5s
 }
 
 html {
