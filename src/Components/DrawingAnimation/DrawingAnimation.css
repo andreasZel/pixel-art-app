@@ -1,17 +1,19 @@
-#Drawing rect {
+.shrinkAnimation {
     animation-delay: 10s;
     animation: shrink 0.2s 2s linear forwards;
-    
 }
 
-#Drawing {
+.drawingAnimation {
     transform-origin: center;
     animation-delay: 0s;
     animation: shrinkAndRotate 2s 7s ease-in-out forwards;
 }
 
-#Rectangle_79 {
+.crease {
     transform: translate(40px, 40px);
+}
+
+.creaseAnimation {
     animation: createCrease 0.4s 8s ease-in-out forwards;
 }
 
