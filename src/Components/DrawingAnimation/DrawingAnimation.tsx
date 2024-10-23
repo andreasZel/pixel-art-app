@@ -39,24 +39,24 @@ export const DrawingAnimation = () => {
         <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Frame_9">
                 <g id="Drawing" className={animationClasses.drawing}>
-                    <rect className={animationClasses.rectangles} key="Rectangle 83" x="10" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 84" x="18.8889" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 85" x="27.7778" y="10" width="8.88889" height="8.88889" fill="#C0C0C0" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 86" x="36.6667" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 87" x="45.5555" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 88" x="54.4445" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 89" x="63.3333" y="10" width="8.88889" height="8.88889" fill="#C0C0C0" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 90" x="72.2222" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 91" x="81.1111" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 92" x="10" y="18.8889" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 93" x="18.8889" y="18.8889" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 94" x="27.7778" y="18.8889" width="8.88889" height="8.88889" fill="#FED3D3" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 95" x="36.6667" y="18.8889" width="8.88889" height="8.88889" fill="#CECECE" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 96" x="45.5555" y="18.8889" width="8.88889" height="8.88889" fill="#C0C0C0" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 97" x="54.4445" y="18.8889" width="8.88889" height="8.88889" fill="#CECECE" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 98" x="63.3333" y="18.8889" width="8.88889" height="8.88889" fill="#FED3D3" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 99" x="72.2222" y="18.8889" width="8.88889" height="8.88889" fill="#ADF7FF" />
-                    <rect className={animationClasses.rectangles} key="Rectangle 100" x="81.1111" y="18.8889" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '25px', "--translate-x": '25px' } as React.CSSProperties} key="Rectangle 83" x="10" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '25px', "--translate-x": '20px' } as React.CSSProperties} key="Rectangle 84" x="18.8889" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '25px', "--translate-x": '15px' } as React.CSSProperties} key="Rectangle 85" x="27.7778" y="10" width="8.88889" height="8.88889" fill="#C0C0C0" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '25px', "--translate-x": '10px' } as React.CSSProperties} key="Rectangle 86" x="36.6667" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '25px', "--translate-x": '0px' } as React.CSSProperties} key="Rectangle 87" x="45.5555" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '25px', "--translate-x": '-10px' } as React.CSSProperties} key="Rectangle 88" x="54.4445" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '25px', "--translate-x": '-15px' } as React.CSSProperties} key="Rectangle 89" x="63.3333" y="10" width="8.88889" height="8.88889" fill="#C0C0C0" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '25px', "--translate-x": '-20px' } as React.CSSProperties} key="Rectangle 90" x="72.2222" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '25px', "--translate-x": '-25px' } as React.CSSProperties} key="Rectangle 91" x="81.1111" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '20px', "--translate-x": '25px' } as React.CSSProperties} key="Rectangle 92" x="10" y="18.8889" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '20px', "--translate-x": '20px' } as React.CSSProperties} key="Rectangle 93" x="18.8889" y="18.8889" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '20px', "--translate-x": '15px' } as React.CSSProperties} key="Rectangle 94" x="27.7778" y="18.8889" width="8.88889" height="8.88889" fill="#FED3D3" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '20px', "--translate-x": '10px' } as React.CSSProperties} key="Rectangle 95" x="36.6667" y="18.8889" width="8.88889" height="8.88889" fill="#CECECE" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '20px', "--translate-x": '0px' } as React.CSSProperties} key="Rectangle 96" x="45.5555" y="18.8889" width="8.88889" height="8.88889" fill="#C0C0C0" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '20px', "--translate-x": '-10px' } as React.CSSProperties} key="Rectangle 97" x="54.4445" y="18.8889" width="8.88889" height="8.88889" fill="#CECECE" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '20px', "--translate-x": '-15px' } as React.CSSProperties} key="Rectangle 98" x="63.3333" y="18.8889" width="8.88889" height="8.88889" fill="#FED3D3" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '20px', "--translate-x": '-20px' } as React.CSSProperties} key="Rectangle 99" x="72.2222" y="18.8889" width="8.88889" height="8.88889" fill="#ADF7FF" />
+                    <rect className={animationClasses.rectangles} style={{ "--translate-y": '20px', "--translate-x": '-25px' } as React.CSSProperties} key="Rectangle 100" x="81.1111" y="18.8889" width="8.88889" height="8.88889" fill="#ADF7FF" />
                     <rect className={animationClasses.rectangles} key="Rectangle 101" x="10" y="27.7778" width="8.88889" height="8.88889" fill="#ADF7FF" />
                     <rect className={animationClasses.rectangles} key="Rectangle 102" x="18.8889" y="27.7778" width="8.88889" height="8.88889" fill="#CECECE" />
                     <rect className={animationClasses.rectangles} key="Rectangle 103" x="27.7778" y="27.7778" width="8.88889" height="8.88889" fill="#C0C0C0" />
