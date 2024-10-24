@@ -7,7 +7,8 @@
     --color-label-text: rgb(168, 101, 0);
     --generic-button-color: #47b960;
     --generic-button-border-color: #43634a;
-    --t: 5s
+    --translate-y: 0;
+    --translate-x: 0;
 }
 
 .dark-theme {
@@ -16,7 +17,8 @@
     --color-label-text: white; 
     --generic-button-color: #31c5ff;
     --generic-button-border-color: #0b455c;
-    --t: 5s
+    --translate-y: 0;
+    --translate-x: 0;
 }
 
 html {
@@ -37,4 +39,6 @@ body {
 #root {
     height: 100%;
     width: 100%;
+    --translate-y: 0;
+    --translate-x: 0;
 }

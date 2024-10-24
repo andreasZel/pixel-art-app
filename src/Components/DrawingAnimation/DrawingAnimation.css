@@ -1,6 +1,7 @@
 .shrinkAnimation {
-    animation-delay: 10s;
-    animation: shrink 0.2s 2s linear forwards;
+    transform-origin: center;
+    border-radius: 8px;
+    animation: expand 5s 2s forwards;
 }
 
 .drawingAnimation {
@@ -10,14 +11,25 @@
 }
 
 .crease {
-    transform: translate(40px, 40px);
+    transform: translate(100px, 100px);
 }
 
 .creaseAnimation {
     animation: createCrease 0.4s 8s ease-in-out forwards;
 }
 
+@keyframes expand {
+    0% {}
+    10% {
+        transform: translateX(var(--translate-x)) translateY(var(--translate-y))
+    }
+    80%{
+        transform: translateX(var(--translate-x)) translateY(var(--translate-y))
+    }
+    100%{
 
+    }
+}
 
 @keyframes createCrease {
     from {}
