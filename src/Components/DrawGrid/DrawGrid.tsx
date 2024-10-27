@@ -45,22 +45,22 @@ export const DrawGrid = () => {
     }
 
     return (
-        // <div className="drawGridWrapper">
-        //     <div id="drawGrid">
-        //         {
-        //             pixels.length > 0 && pixels?.map((gridTile) => {
-        //                 return <div
-        //                     key={gridTile?.id}
-        //                     className="gridTile"
-        //                     style={{ backgroundColor: gridTile?.color }}
-        //                     onClick={() => { if (DrawContextStateOptions.drawMode == 'click') alterStyle(gridTile?.id) }}
-        //                     onMouseOver={() => { if (DrawContextStateOptions.drawMode == 'FreeDraw') alterStyle(gridTile?.id) }}
-        //                 ></div>
-        //             })
-        //         }
-        //     </div>
-        // </div>
-        <DrawingAnimation />
+        <div className="drawGridWrapper">
+            <div id="drawGrid">
+                {
+                    pixels.length > 0 && pixels?.map((gridTile) => {
+                        return <div
+                            key={gridTile?.id}
+                            className="gridTile"
+                            style={{ backgroundColor: gridTile?.color }}
+                            onClick={() => { if (DrawContextStateOptions.drawMode == 'click') alterStyle(gridTile?.id) }}
+                            onMouseOver={() => { if (DrawContextStateOptions.drawMode == 'FreeDraw') alterStyle(gridTile?.id) }}
+                        ></div>
+                    })
+                }
+            </div>
+        </div>
+        // <DrawingAnimation />
     )
 }
 
