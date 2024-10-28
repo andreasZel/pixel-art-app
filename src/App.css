@@ -10,6 +10,18 @@
     background-color: var(--background-color-secondary);
 }
 
+.apploginWrapper {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 100%;
+  height: 100%;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  caret-color: transparent;
+  background-color: var(--background-color-secondary);
+}
+
 .colorInput {
     padding: 0;
     margin: 0;

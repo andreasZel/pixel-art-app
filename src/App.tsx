@@ -4,6 +4,8 @@ import { DrawGrid } from "./Components/DrawGrid/DrawGrid";
 import { DrawMenu } from "./Components/DrawMenu/DrawMenu";
 import { DrawOptionsContext } from "./Components/DrawOptionsProvider/DrawOptionsProvider";
 import { drawElement, inentoryItems } from "./types";
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { LoginPage } from "./Components/LoginPage/LoginPage";
 
 const App = () => {
 
@@ -14,19 +16,31 @@ const App = () => {
     const [inventoryItems, setInventoryItems] = useState<inentoryItems | null>(null);
     const [theme, setTheme] = useState<"light" | "dark">(localStorage.getItem('theme') as ('light' | 'dark') || 'light');
 
+    const isAuthenticated = document.cookie.includes('auth_token');
+
     return (
-        <div className={`appWrapper ${theme != 'dark' ? 'light-theme' : 'dark-theme'}`}>
-            <DrawOptionsContext.Provider value={{
-                DrawContextStateOptions, setDrawContextStateOptions,
-                imageColors, setImageColors,
-                pixels, setPixels,
-                selectedDrawingId, setSelectedDrawingId,
-                inventoryItems, setInventoryItems,
-                theme, setTheme
-            }}>
-                <DrawGrid />
-                <DrawMenu />
-            </DrawOptionsContext.Provider>
+        <div className={`${!isAuthenticated ? 'apploginWrapper' : 'appWrapper'} ${theme != 'dark' ? 'light-theme' : 'dark-theme'}`}>
+            <Router>
+                <Routes>
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/"
+                        element={
+                            isAuthenticated ? <DrawOptionsContext.Provider value={{
+                                DrawContextStateOptions, setDrawContextStateOptions,
+                                imageColors, setImageColors,
+                                pixels, setPixels,
+                                selectedDrawingId, setSelectedDrawingId,
+                                inventoryItems, setInventoryItems,
+                                theme, setTheme
+                            }}>
+                                <DrawGrid />
+                                <DrawMenu />
+                            </DrawOptionsContext.Provider>
+                                : <Navigate to="/login" />
+                        }
+                    />
+                </Routes>
+            </Router>
         </div>
     )
 }
