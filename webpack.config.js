@@ -33,6 +33,8 @@ module.exports = {
          * port of dev server
         */
         port: "9500",
+        // Redirects all requests to index.html
+        historyApiFallback: true,
         proxy: [
             {
                 context: ['/api'],
