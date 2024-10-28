@@ -60,7 +60,6 @@ export const DrawGrid = () => {
                 }
             </div>
         </div>
-        // <DrawingAnimation />
     )
 }
 
