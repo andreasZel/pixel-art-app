@@ -36,7 +36,7 @@ export const DrawingAnimation = () => {
 
 
     return (
-        <svg width="100%" height="100%" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100%" height="100%" style={{ filter: 'drop-shadow(2px 4px 6px black)' }} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="Frame_9">
                 <g id="Drawing" className={animationClasses.drawing}>
                     <rect className={animationClasses.rectangles} style={{ "--translate-y": '-20px', "--translate-x": '-20px' } as React.CSSProperties} key="Rectangle 83" x="10" y="10" width="8.88889" height="8.88889" fill="#ADF7FF" />

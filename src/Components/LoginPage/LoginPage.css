@@ -21,6 +21,11 @@
     font-family: Irish Grover;
 }
 
+.loginWrapper input {
+    font-size: 40px;
+    font-family: Irish Grover;
+}
+
 .loginInputsArea {
     position: relative;
     width: 90%;
