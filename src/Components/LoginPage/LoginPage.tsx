@@ -3,9 +3,13 @@ import { DrawingAnimation } from "../DrawingAnimation/DrawingAnimation";
 import { StyledButton } from "../StyledButton/StyledButton";
 import './LoginPage.css';
 import React, { useRef } from "react";
+import { useDrawOptionsContext } from "../DrawOptionsProvider/DrawOptionsProvider";
+import { darkTheme, ligthTheme } from "../../Icons";
 
 export const LoginPage = () => {
+
     let navigate = useNavigate();
+    const { theme, setTheme } = useDrawOptionsContext();
 
     const Username = useRef<HTMLInputElement | null>(null);
     const Password = useRef<HTMLInputElement | null>(null);
@@ -49,6 +53,15 @@ export const LoginPage = () => {
                 <StyledButton title={'Login'} style={{ position: 'absolute', bottom: '15px', right: '25px', width: '200px', height: '30', fontSize: '40px', backgroundColor: 'var(--generic-button-color)', padding: '10px 20px' }} onClickCallBack={() => { login() }} />
             </div>
         </div>
+        <img className="themeBtn" title={`Set theme to ${theme == 'dark' ? 'light' : 'dark'}`}
+            src={theme == 'light' ? ligthTheme : darkTheme}
+            onClick={() => {
+                setTheme((prev) => {
+                    localStorage.setItem('theme', prev == "dark" ? 'light' : 'dark');
+                    return prev == "dark" ? 'light' : 'dark';
+                })
+            }}
+            width={30} />
     </>
     )
 }

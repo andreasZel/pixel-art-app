@@ -22,7 +22,14 @@ const App = () => {
         <div className={`${!isAuthenticated ? 'apploginWrapper' : 'appWrapper'} ${theme != 'dark' ? 'light-theme' : 'dark-theme'}`}>
             <Router>
                 <Routes>
-                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/login" element={<DrawOptionsContext.Provider value={{
+                        DrawContextStateOptions, setDrawContextStateOptions,
+                        imageColors, setImageColors,
+                        pixels, setPixels,
+                        selectedDrawingId, setSelectedDrawingId,
+                        inventoryItems, setInventoryItems,
+                        theme, setTheme
+                    }}><LoginPage /></DrawOptionsContext.Provider>} />
                     <Route path="/"
                         element={
                             isAuthenticated ? <DrawOptionsContext.Provider value={{
