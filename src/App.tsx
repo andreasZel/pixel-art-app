@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './App.css';
 import { DrawGrid } from "./Components/DrawGrid/DrawGrid";
 import { DrawMenu } from "./Components/DrawMenu/DrawMenu";
@@ -15,40 +15,47 @@ const App = () => {
     const [selectedDrawingId, setSelectedDrawingId] = useState<number | null>(null);
     const [inventoryItems, setInventoryItems] = useState<inentoryItems | null>(null);
     const [theme, setTheme] = useState<"light" | "dark">(localStorage.getItem('theme') as ('light' | 'dark') || 'light');
+    const [isAuthenticated, setauthendicated] = useState<boolean | null>(null);
 
-    const isAuthenticated = document.cookie.includes('auth_token');
+    useEffect(() => {
+        setauthendicated(document.cookie.includes('auth_token'));
+    }, [document.cookie])
 
     return (
-        <div className={`${!isAuthenticated ? 'apploginWrapper' : 'appWrapper'} ${theme != 'dark' ? 'light-theme' : 'dark-theme'}`}>
-            <Router>
-                <Routes>
-                    <Route path="/login" element={<DrawOptionsContext.Provider value={{
-                        DrawContextStateOptions, setDrawContextStateOptions,
-                        imageColors, setImageColors,
-                        pixels, setPixels,
-                        selectedDrawingId, setSelectedDrawingId,
-                        inventoryItems, setInventoryItems,
-                        theme, setTheme
-                    }}><LoginPage /></DrawOptionsContext.Provider>} />
-                    <Route path="/"
-                        element={
-                            isAuthenticated ? <DrawOptionsContext.Provider value={{
-                                DrawContextStateOptions, setDrawContextStateOptions,
-                                imageColors, setImageColors,
-                                pixels, setPixels,
-                                selectedDrawingId, setSelectedDrawingId,
-                                inventoryItems, setInventoryItems,
-                                theme, setTheme
-                            }}>
+        <Router>
+            <Routes>
+                <Route path="/login" element={<DrawOptionsContext.Provider value={{
+                    DrawContextStateOptions, setDrawContextStateOptions,
+                    imageColors, setImageColors,
+                    pixels, setPixels,
+                    selectedDrawingId, setSelectedDrawingId,
+                    inventoryItems, setInventoryItems,
+                    theme, setTheme
+                }}>
+                    <div className={`apploginWrapper ${theme != 'dark' ? 'light-theme' : 'dark-theme'}`}>
+                        <LoginPage isAuthenticated={isAuthenticated} />
+                    </div>
+                </DrawOptionsContext.Provider>} />
+                <Route path="/"
+                    element={
+                        <DrawOptionsContext.Provider value={{
+                            DrawContextStateOptions, setDrawContextStateOptions,
+                            imageColors, setImageColors,
+                            pixels, setPixels,
+                            selectedDrawingId, setSelectedDrawingId,
+                            inventoryItems, setInventoryItems,
+                            theme, setTheme
+                        }}>{isAuthenticated
+                            ? <div className={`appWrapper ${theme != 'dark' ? 'light-theme' : 'dark-theme'}`}>
+
                                 <DrawGrid />
                                 <DrawMenu />
-                            </DrawOptionsContext.Provider>
-                                : <Navigate to="/login" />
-                        }
-                    />
-                </Routes>
-            </Router>
-        </div>
+                            </div>
+                            : <Navigate to='/login' />}
+                        </DrawOptionsContext.Provider>}
+                />
+            </Routes>
+        </Router>
     )
 }
 

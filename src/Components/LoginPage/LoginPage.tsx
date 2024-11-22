@@ -6,7 +6,7 @@ import React, { useRef } from "react";
 import { useDrawOptionsContext } from "../DrawOptionsProvider/DrawOptionsProvider";
 import { darkTheme, ligthTheme } from "../../Icons";
 
-export const LoginPage = () => {
+export const LoginPage = ({ isAuthenticated }: { isAuthenticated: boolean | null }) => {
 
     let navigate = useNavigate();
     const { theme, setTheme } = useDrawOptionsContext();
@@ -31,9 +31,11 @@ export const LoginPage = () => {
             if (res.status == 200) {
                 navigate('/');
             }
-
         }
     }
+
+    if (isAuthenticated)
+        navigate('/');
 
     return (<>
         <div className="animationWrapper">
